@@ -48,8 +48,8 @@ $(".select").on("click",function() //<div> element clicked
         {
             defenderSelected=true;
             defenderName=this.id;
-            //$("#defender").append(this);
-            $("#defender").append(this).find("div").css('background-color', 'grey');
+            $("#defender").html(this).find("div").css('background-color', 'grey');
+            $("#defender").fadeIn(2000);
             $("#attack").prop("disabled",false);
             getDefenderValues();
         }
@@ -154,7 +154,8 @@ function youWon()
         $("#restart").prop("disabled",false);
     }
     //remove defender from defender area.
-    $("#defender").empty();
+    $("#defender").fadeOut(2000);
+    //$("#defender").empty();
     defenderSelected=false;
     //enable attack button.
     $("#attack").prop("disabled",false);
